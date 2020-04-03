@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="https://how2j.cn/study/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+$(function(){
+	$("#tb").css({"table-layout":"fixed","border-collapse":"collapse","text-align":"center","margin":"auto"});
+	$("#tb tr").css({"border-bottom-width":"1px","border-bottom-style":"solid"});
+	$("#tb tr:first").css({"border-bottom":"solid 3px #555"});
+	$("#tb tr td").css({"width":"200px","height":"50px"});
+	$("#tb tr:odd").css({"background-color":"#f8f8f8"});
+	$("#tb tr:even").css({"background-color":"white"});
+});
+</script>
+<style>
+p{
+	visibility:visible;
+	color:white !important;	
+}
+</style>
+</head>
+<body>
+<p style="color:red;position:absolute;top:0px;left:150px;z-index:1000;margin:8">这是一个段落</p>
+<div style="position:absolute;top:0px;left:0px;width:200px;height:100px">
+<p id="p1" style="position:relative;left:0px;top:0px">这是第二个段落</p>
+</div>
+<p class="pre">这是第三个段落</p>
+
+<div class="pre" style="border-style:solid">这是第一个div<br>
+<span>div中的一个span</span><br>
+<div style="text-align:center;text-decoration:overline;letter-spacing:3px;text-indent:50;font-style:oblique;border-top-style:dotted;border-color:rgb(0,0,255)">这个是div中一个居中的子div,并且文本带有上划线</div><br>
+<div style="text-align:left;text-decoration:underline;line-height:90%;letter-spacing:3px;font:italic 700 30px;border-style:dashed;border-color:#ff0000;border-top-width:50px;margin:50px">这个是div中一个左对齐的div,并且文本带有下划线</div><br>
+<div style="text-align:right;text-decoration:line-through;word-spacing:3px;font-size:150%;font-weight:bold;border-style:double;border-color:yellow;margin: 50px">这是div中一个右对齐的div,并且文本带有删除线</div><br>
+<p style="word-spacing:13px;text-transform:lowercase;font-size:40px;font-weight:900;">Hello World! Welcome to China!</p>
+</div><br>
+<div style="height:100px;text-align:center;font-size:50px;border-top-color:black;border-left-color:#00ff00;border-right-color:blue;border-bottom-color:green;border-style:solid;border-width:100px">块状元素的边框</div>
+<table border="2" style="table-layout:fixed;border-collapse:collapse">
+<tr style="border-bottom-style:dotted">
+<td>中国日本韩国文文文文我我我我我我我我我我我我吾问无为谓额额发三维是无法</td>
+<td width="50%">美国</td>
+</tr>
+<tr>
+<td>你好</td>
+<td>我好</td>
+</tr>
+</table>
+
+<table id="tb">
+<script>
+var data = new Array(["id","名称","血量","伤害"],[1,"韩信","1000","5000"],[2,"后羿","500","8000"],[3,"廉颇","5000","3000"],[4,"甄姬","3000","5000"]);
+var tb = document.getElementById("tb");
+for(i=0;i<data.length;i++){
+	var tr = document.createElement("tr");
+	for(j=0;j<data[i].length;j++){
+		var td = document.createElement("td");
+		var tdtext = document.createTextNode(data[i][j]);
+		td.appendChild(tdtext);
+		tr.appendChild(td);
+	}
+	tb.appendChild(tr);
+}
+</script>
+</table>
+
+<div>
+<span class="span1">这是使用padding的文字</span>
+</div>
+<a href="http://www.baidu.com">百度一下</a>
+</body>
+
+</html>
